@@ -1,0 +1,11 @@
+﻿body {
+    background-image:url("../images/Home-2-Slider-1.webp")
+}
+#card {
+    background-image: url("../images/Collection-3.webp")
+}
+#login {
+    background-color: whitesmoke;
+    margin-top: 82px;
+    border-radius: 16px;
+}

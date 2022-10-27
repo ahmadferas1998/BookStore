@@ -1,0 +1,104 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUsser> signInM
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <style type="text/css">
+        body {
+            background-color: rgb(210, 210, 210);
+        }
+    </style>
+    @RenderSection("head", false)
+
+
+
+    <link href="~/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width" />
+    <title>Layouts</title>
+
+    <link href="~/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="~/lib/jquery/dist/jquery.js" type="text/javascript"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" type="text/javascript"></script>
+    <script src="~/lib/jquery/dist/jquery.js" type="text/javascript"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" type="text/javascript"></script>
+</head>
+<body style="background-color: rgb(238, 238, 238); ">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <nav class="navbar-inverse">
+                    <div class="navbar-brand">
+                        HR System
+                    </div>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-target="#menu1" data-toggle="collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="menu1" class="navbar-collapse collapse">
+                        @*@if (signInM.IsSignedIn(User))
+                        {*@
+
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a asp-action="NewRole" asp-controller="Accont">NEW ROLE</a>
+                                </li>
+                                <li>
+                                    <a asp-action="USerList" asp-controller="Accont">LIST ROLE</a>
+                                </li>
+                                <li>
+                                    <a asp-action="Index" asp-controller="Accont">DASHBORD</a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+
+                                    <a asp-action="signout"><span class="glyphicon glyphicon-log-in">out</span></a>
+                                </li>
+
+                            </ul>
+                                @*}
+                                else
+                                {*@
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>
+
+
+                                        <a asp-action="login" asp-controller="Signup"><span class="glyphicon glyphicon-log-out">LOGIN</span></a>
+                                    </li>
+                                    <li>
+
+                                        <a asp-action="Index" asp-controller="Signup"><span class="glyphicon glyphicon-log-out">SIGNUP</span></a>
+                                    </li>
+
+                                </ul>
+
+                                @*}*@
+                        </div>
+                </nav>
+            </div>
+        </div>
+
+        <div>
+
+
+            @RenderSection("Body")
+        </div>
+
+
+
+
+
+    </div>
+
+</body>
+</html>

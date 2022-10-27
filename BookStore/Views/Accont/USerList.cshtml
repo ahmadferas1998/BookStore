@@ -1,0 +1,61 @@
+﻿@model List<ApplicationUsser>;
+@{
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<!DOCTYPE html>
+
+@section body 
+{
+    <form method="post">
+    <div class=" container-fluid">
+        <table class="table table-bordered table-striped table-hover"   >
+            <thead>
+                <tr>
+
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>ACTIONS</th>
+                </tr>
+
+            </thead>
+            <tbody>
+
+                @foreach(ApplicationUsser item in Model)
+                {
+                <tr>
+
+
+                    <td>@item.UserName</td>
+                    <td>@item.Email</td>
+                    <td><input type="submit" class=" btn btn-primary"  asp-action="CheackUser" asp-route-userid="@item.Id" ></td>
+                </tr>
+
+
+
+                }
+            </tbody>
+
+
+
+
+
+
+
+
+
+        </table>
+
+
+
+
+
+
+
+    </div>
+        </form>
+
+
+
+
+}

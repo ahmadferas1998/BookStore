@@ -1,0 +1,49 @@
+﻿@model Study_3092022.Models.RoleModel;
+@{
+
+    Layout = "~/Views/Shared/Layout2.cshtml";
+ 
+}
+
+<!DOCTYPE html>
+
+
+
+
+
+@section body
+{
+
+    <h1>NEW ROLE</h1>
+    <form method="post">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>username </label>
+                        <input type="text" class="form-control" asp-for="name" />
+                        <span asp-validation-for="name"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+
+                        <input type="submit" class="btn btn-primary" asp-action="AddRow" />
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </form>
+
+
+
+
+
+}
